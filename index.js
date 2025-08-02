@@ -95,18 +95,15 @@ async function extractImageFromArticle(articleUrl) {
 
         const { data: html } = await axios.get(articleUrl, {
             headers: {
-                // Some sites block bots; setting a common user-agent helps
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
             },
             timeout: 10000,
         });
         const $ = cheerio.load(html);
 
-        // 1. Try Open Graph image
         let img = $('meta[property="og:image"]').attr('content');
         if (img) return img;
 
-        // 2. Fallback: find first <img> inside main article area or general
         img = $('article img').first().attr('src') || $('img').first().attr('src');
         if (img) return img;
         return null; // no image found
