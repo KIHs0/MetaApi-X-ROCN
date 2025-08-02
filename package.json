@@ -1,10 +1,28 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "metaApi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "nodemon index.jsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "@google-cloud/translate": "^9.2.0",
+    "@vitalets/google-translate-api": "^9.2.1",
+    "axios": "^1.11.0",
+    "cheerio": "^1.1.2",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "form-data": "^4.0.4",
+    "fs": "^0.0.1-security",
+    "node-cron": "^4.2.1",
+    "path": "^0.12.7",
+    "rss-parser": "^3.13.0"
+  }
 }
