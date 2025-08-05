@@ -88,7 +88,6 @@ async function downloadImage(imageUrl, destFolder) {
 async function extractImageFromArticle(articleUrl) {
   try {
     console.log("Extracting image from article:", articleUrl);
-    console.log("hi");
 
     const { data: html } = await axios.get(articleUrl, {
       headers: {
