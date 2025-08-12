@@ -121,8 +121,8 @@ const parseData = async () => {
   }
   return;
 };
-cron.schedule(" 0 * * * *", () => {
-  console.log("cron running");
+cron.schedule(" * * * * * ", () => {
+  console.log(`cron running ${new Date(Date.now()).toLocaleTimeString()}`);
   (async () => {
     try {
       await parseData();
